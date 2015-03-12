@@ -23,9 +23,6 @@ public class CreateObjectContextWindow : MonoBehaviour
         }
 	}
 
-    private float sliderValue = 1.0f;
-    private float maxSliderValue = 10.0f;
-
     void OnGUI()
     {
         if (_contextMenuOpen)
