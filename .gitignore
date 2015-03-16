@@ -17,6 +17,7 @@ bld/
 [Oo]bj/
 [Ll]ibrary/
 [Tt]emp/
+[Pp]ogs_Data
 
 # Roslyn cache directories
 *.ide/
