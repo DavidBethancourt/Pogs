@@ -51,7 +51,7 @@ public class PogMovement : MonoBehaviour {
     void FixedUpdate()
     {
         // Apply movement to the rigidbody
-        rigidbody2D.velocity = _intendedMovement;
-        rigidbody2D.rotation = _angle;
+        GetComponent<Rigidbody2D>().velocity = _intendedMovement;
+        GetComponent<Rigidbody2D>().rotation = _angle;
     }
 }
