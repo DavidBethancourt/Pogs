@@ -42,9 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: Terrain
     uniqueID: 3757895313
     locked: 0
-  - name: Action
+  - name: Things
     uniqueID: 3937794607
+    locked: 0
+  - name: Action
+    uniqueID: 1577929199
     locked: 0

@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class CreateObjectContextWindow : MonoBehaviour 
 {
     public GameObject Pog;
+    public GameObject Tree;
+    public GameObject Rock;
+    public GameObject Grass;
     private bool _contextMenuOpen = false;
     private Vector2 _rightClickScreenPosition;
 	void Start () {
@@ -36,14 +40,24 @@ public class CreateObjectContextWindow : MonoBehaviour
                         _contextMenuOpen = false;
                     }
                     GUILayout.EndHorizontal();
-                if (GUILayout.Button("Pog"))
-                {
-                    _contextMenuOpen = false;
-                    Vector3 worldpoint = Camera.main.ScreenToWorldPoint(new Vector3(_rightClickScreenPosition.x, _rightClickScreenPosition.y, 0));
-                    Instantiate(Pog, new Vector3(worldpoint.x, worldpoint.y, 0), Quaternion.identity);
-                }
+                    ObjectButtonLogic("Pog", Pog);
+                    ObjectButtonLogic("Grass", Grass);
+                    ObjectButtonLogic("Rock", Rock);
+                    ObjectButtonLogic("Tree", Tree);
                 GUILayout.EndVertical();
             GUILayout.EndArea();
+        }
+    }
+
+    private void ObjectButtonLogic(string buttonTitle, GameObject item)
+    {
+        if (GUILayout.Button(buttonTitle))
+        {
+            _contextMenuOpen = false;
+            Vector3 worldpoint = Camera.main.ScreenToWorldPoint(new Vector3(_rightClickScreenPosition.x, _rightClickScreenPosition.y, 0));
+            int Xclose = Convert.ToInt32(Math.Round(worldpoint.x, 0));
+            int Yclose = Convert.ToInt32(Math.Round(worldpoint.y, 0));
+            Instantiate(item, new Vector3(Xclose, Yclose, 0), Quaternion.identity);
         }
     }
 
