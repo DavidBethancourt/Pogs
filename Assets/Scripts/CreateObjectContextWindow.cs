@@ -8,6 +8,7 @@ public class CreateObjectContextWindow : MonoBehaviour
     public GameObject Tree;
     public GameObject Rock;
     public GameObject Grass;
+
     private bool _contextMenuOpen = false;
     private Vector2 _rightClickScreenPosition;
 	void Start () {
@@ -17,7 +18,7 @@ public class CreateObjectContextWindow : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (!_contextMenuOpen)
             {
@@ -31,10 +32,10 @@ public class CreateObjectContextWindow : MonoBehaviour
     {
         if (_contextMenuOpen)
         {
-            GUILayout.BeginArea(new Rect(_rightClickScreenPosition.x, Screen.height - _rightClickScreenPosition.y, 200, 200));
+            GUILayout.BeginArea(new Rect(_rightClickScreenPosition.x, Screen.height - _rightClickScreenPosition.y, 150, 250));
                 GUILayout.BeginVertical("box");
                     GUILayout.BeginHorizontal();
-                    GUILayout.Label("Create Object");
+                    GUILayout.Label("Create Thing");
                     if (GUILayout.Button("X", GUILayout.Width(23.0f)))
                     {
                         _contextMenuOpen = false;
@@ -58,15 +59,6 @@ public class CreateObjectContextWindow : MonoBehaviour
             int Xclose = Convert.ToInt32(Math.Round(worldpoint.x, 0));
             int Yclose = Convert.ToInt32(Math.Round(worldpoint.y, 0));
             Instantiate(item, new Vector3(Xclose, Yclose, 0), Quaternion.identity);
-        }
-    }
-
-    void DrawWindow(int windowId)
-    {
-        GUILayout.Label("this is a label");
-        if (GUILayout.Button("Close Window"))
-        {
-            _contextMenuOpen = false;
         }
     }
 }

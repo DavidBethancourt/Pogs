@@ -12,20 +12,19 @@ public class BoardManager : MonoBehaviour
     public GameObject Rock;
     public GameObject Grass;
 
-    private Transform _boardHolder;
+    private Transform _terrainHolder;
     private BoardPositions _boardPositions;
 
     public void SetupScene()
     {
         _boardPositions = new BoardPositions(columns, rows);
-        _boardHolder = new GameObject("Board").transform; //Instantiate Board and set boardHolder to its transform.
+        _terrainHolder = new GameObject("Terrain").transform; 
         TheWholeWorldIsDirt();
         _boardPositions.PlaceTerrain();
 
         DrawObjects(Grass, _boardPositions.Grass);
         DrawObjects(Rock, _boardPositions.Rocks);
         DrawObjects(Tree, _boardPositions.Trees);
-        
     }
 
     private void DrawObjects(GameObject thingee, List<Vector2> positions)
@@ -33,7 +32,7 @@ public class BoardManager : MonoBehaviour
         foreach (Vector2 position in positions)
         {
             GameObject instance = Instantiate(thingee, new Vector3(position.x, position.y, 0f), Quaternion.identity) as GameObject;
-            instance.transform.SetParent(_boardHolder); //just organizational to avoid cluttering hierarchy.
+            instance.transform.SetParent(_terrainHolder); //just organizational to avoid cluttering hierarchy.
         }
     }
 
@@ -44,8 +43,28 @@ public class BoardManager : MonoBehaviour
             for (int y = 0; y < rows; y++)
             {
                 GameObject instance = Instantiate(Dirt, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
-                instance.transform.SetParent(_boardHolder); //just organizational to avoid cluttering hierarchy.
+                instance.transform.SetParent(_terrainHolder); //just organizational to avoid cluttering hierarchy.
             }
         }
+    }
+
+    internal void SetUnwalkable(int x, int y)
+    {
+        _boardPositions.SetUnwalkable(x, y);
+    }
+
+    internal bool IsWalkable(int x, int y)
+    {
+        return _boardPositions.IsWalkable(x, y);
+    }
+
+    internal bool AddBuildingToBoard(GameObject _draggingBuilding)
+    {
+        return _boardPositions.AddBuildingToBoard(_draggingBuilding);
+    }
+
+    internal void TinterizeForLegalPlacement(GameObject _draggingBuilding)
+    {
+        _boardPositions.TinterizeForLegalPlacement(_draggingBuilding);
     }
 }

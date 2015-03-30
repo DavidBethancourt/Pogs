@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a299149c1dbb54a95156784f103769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Marker: {fileID: 119198, guid: 96447b93e85251240a666c857e1e864d, type: 2}
 --- !u!1 &1406723212
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pog: {fileID: 108792, guid: 39e5dbea057f4b64b92358f15204f5d8, type: 2}
+  Tree: {fileID: 178574, guid: 333079e51f4494f4c94358c0ce278904, type: 2}
+  Rock: {fileID: 153874, guid: 21739bebee0f04d42aa84db2e3295b53, type: 2}
+  Grass: {fileID: 147534, guid: ada43c79861a1e84ea359b2dc80f6a5f, type: 2}
 --- !u!4 &1406723214
 Transform:
   m_ObjectHideFlags: 0
@@ -179,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1406723212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.01000023, y: 3.5999999, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -238,6 +242,95 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &1732637247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1732637249}
+  - 114: {fileID: 1732637248}
+  m_Layer: 0
+  m_Name: BuildingMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1732637248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732637247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd1b52945b4e93b40acabf3ac32e510f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Farm: {fileID: 104322, guid: b6e3b35b537f3a145b02706422abc1c9, type: 2}
+  Incubator: {fileID: 176092, guid: 387b21edd583f4449b4697c9728ca72e, type: 2}
+  House: {fileID: 105244, guid: 83537a8bf858193418c9a0285d4e9894, type: 2}
+  TownHall: {fileID: 141194, guid: 56d7bbdae338d3b42bde13649b9d47df, type: 2}
+  FarmMenuTexture: {fileID: 2800000, guid: 7fe4c092e38559f42952dd691e0bc426, type: 3}
+  IncubatorMenuTexture: {fileID: 2800000, guid: 0377ff5dd15e3a445aa4789dc22c8193,
+    type: 3}
+  HouseMenuTexture: {fileID: 2800000, guid: d78e6368cb5e4de4f92026247b14378e, type: 3}
+  TownHallMenuTexture: {fileID: 2800000, guid: c5fbe9130bb73bc4d8a32bdeaa69b906, type: 3}
+--- !u!4 &1732637249
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732637247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+--- !u!1 &2053979161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2053979163}
+  - 114: {fileID: 2053979162}
+  m_Layer: 0
+  m_Name: CameraController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2053979162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053979161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a565fc5c5e6b8246bfada6ac1db6b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraDistance: 10
+  MainCamera: {fileID: 2061036306}
+--- !u!4 &2053979163
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053979161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -50, y: -50, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2061036307}
+  m_RootOrder: 0
 --- !u!1 &2061036302
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +412,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50, y: 50, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2053979163}
   m_Father: {fileID: 0}
   m_RootOrder: 0

@@ -45,6 +45,9 @@ TagManager:
   - name: Terrain
     uniqueID: 3757895313
     locked: 0
+  - name: Structure
+    uniqueID: 3122199997
+    locked: 0
   - name: Things
     uniqueID: 3937794607
     locked: 0
