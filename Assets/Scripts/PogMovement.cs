@@ -21,7 +21,6 @@ public class PogMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        
         Vector3 originalPosition = this.transform.position;
         Vector3 desiredPosition = Vector3.MoveTowards(this.transform.position, _turkeyLeg.transform.position, 1f);
         Vector3 moveDirection = desiredPosition - originalPosition;
