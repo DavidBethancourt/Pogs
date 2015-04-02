@@ -13,18 +13,18 @@ public class BoardManager : MonoBehaviour
     public GameObject Grass;
 
     private Transform _terrainHolder;
-    private BoardPositions _boardPositions;
+    public BoardPositions Positions;
 
     public void SetupScene()
     {
-        _boardPositions = new BoardPositions(columns, rows);
+        Positions = new BoardPositions(columns, rows);
         _terrainHolder = new GameObject("Terrain").transform; 
         TheWholeWorldIsDirt();
-        _boardPositions.PlaceTerrain();
+        Positions.PlaceTerrain();
 
-        DrawObjects(Grass, _boardPositions.Grass);
-        DrawObjects(Rock, _boardPositions.Rocks);
-        DrawObjects(Tree, _boardPositions.Trees);
+        DrawObjects(Grass, Positions.Grass);
+        DrawObjects(Rock, Positions.Rocks);
+        DrawObjects(Tree, Positions.Trees);
     }
 
     private void DrawObjects(GameObject thingee, List<Vector2> positions)
@@ -46,25 +46,5 @@ public class BoardManager : MonoBehaviour
                 instance.transform.SetParent(_terrainHolder); //just organizational to avoid cluttering hierarchy.
             }
         }
-    }
-
-    internal void SetUnwalkable(int x, int y)
-    {
-        _boardPositions.SetUnwalkable(x, y);
-    }
-
-    internal bool IsWalkable(int x, int y)
-    {
-        return _boardPositions.IsWalkable(x, y);
-    }
-
-    internal bool AddBuildingToBoard(GameObject _draggingBuilding)
-    {
-        return _boardPositions.AddBuildingToBoard(_draggingBuilding);
-    }
-
-    internal void TinterizeForLegalPlacement(GameObject _draggingBuilding)
-    {
-        _boardPositions.TinterizeForLegalPlacement(_draggingBuilding);
     }
 }

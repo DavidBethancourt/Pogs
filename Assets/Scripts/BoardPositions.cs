@@ -15,7 +15,7 @@ public class BoardPositions
     public List<Vector2> Rocks { get; set; }
     public List<Vector2> Grass { get; set; }
 
-    private bool[,] _walkable;
+    public bool[,] WalkableMap;
     private bool[,] _doors;
     private List<Building> _buildings = new List<Building>();
 
@@ -56,12 +56,12 @@ public class BoardPositions
 
     private void InitializeWalkableMap()
     {
-        _walkable = new bool[Columns, Rows];
+        WalkableMap = new bool[Columns, Rows];
         for (int x = 0; x < Columns; x++)
         {
             for (int y = 0; y < Rows; y++)
             {
-                _walkable[x, y] = true;
+                WalkableMap[x, y] = true;
             }
         }
     }
@@ -220,12 +220,12 @@ public class BoardPositions
 
     internal void SetUnwalkable(int x, int y)
     {
-        _walkable[x, y] = false;
+        WalkableMap[x, y] = false;
     }
 
     internal bool IsWalkable(int x, int y)
     {
-        return (_walkable[x,y] == true);
+        return (WalkableMap[x,y] == true);
     }
 
     internal void SetDoor(int x, int y)

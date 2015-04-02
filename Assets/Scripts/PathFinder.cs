@@ -11,7 +11,7 @@ public class PathFinder
 
     public PathFinder() { }
 
-    private List<SimplePoint> FindPath(SimplePoint start, SimplePoint end, bool[,] walkableMap)
+    public List<SimplePoint> FindPath(SimplePoint start, SimplePoint end, bool[,] walkableMap)
     {
         _beenEvaluated = new bool[walkableMap.GetLength(0), walkableMap.GetLength(1)];
         _walkableMap = walkableMap;

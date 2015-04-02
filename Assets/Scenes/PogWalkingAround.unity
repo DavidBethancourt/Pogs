@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a299149c1dbb54a95156784f103769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BoardLogic: {fileID: 0}
   Marker: {fileID: 119198, guid: 96447b93e85251240a666c857e1e864d, type: 2}
 --- !u!1 &1406723212
 GameObject:
@@ -272,12 +273,12 @@ MonoBehaviour:
   Farm: {fileID: 104322, guid: b6e3b35b537f3a145b02706422abc1c9, type: 2}
   Incubator: {fileID: 176092, guid: 387b21edd583f4449b4697c9728ca72e, type: 2}
   House: {fileID: 105244, guid: 83537a8bf858193418c9a0285d4e9894, type: 2}
-  TownHall: {fileID: 141194, guid: 56d7bbdae338d3b42bde13649b9d47df, type: 2}
+  TownHall: {fileID: 152658, guid: f0165fc4d50564a429cd96c93d63cc5f, type: 2}
   FarmMenuTexture: {fileID: 2800000, guid: 7fe4c092e38559f42952dd691e0bc426, type: 3}
   IncubatorMenuTexture: {fileID: 2800000, guid: 0377ff5dd15e3a445aa4789dc22c8193,
     type: 3}
   HouseMenuTexture: {fileID: 2800000, guid: d78e6368cb5e4de4f92026247b14378e, type: 3}
-  TownHallMenuTexture: {fileID: 2800000, guid: c5fbe9130bb73bc4d8a32bdeaa69b906, type: 3}
+  TownHallMenuTexture: {fileID: 2800000, guid: a00e4da53285bbc488801feced0fbf0f, type: 3}
 --- !u!4 &1732637249
 Transform:
   m_ObjectHideFlags: 0
