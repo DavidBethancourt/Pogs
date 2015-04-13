@@ -248,9 +248,9 @@ public class BoardPositions
         {
             TurnDraggingBuildingColor(Color.white, myBuilding);
             _buildings.Add(newBuilding);
-            foreach (Vector3 spot in buildingOccupies)
+            foreach (Vector3 spot in buildingOccupies)   // buildingOccupies has door locations in it!
             {
-                SetUnwalkable((int)spot.x, (int)spot.y);
+                SetUnwalkable((int)spot.x, (int)spot.y);  // so we should not set all spots unwalkable; some are door spots... 
             }
 
             foreach (Vector2 door in newBuilding.DoorGridLocations)
@@ -295,30 +295,36 @@ public class BoardPositions
 
         foreach (Vector2 door in newBuilding.DoorGridLocations)
         {
-            buildingOccupies.Add(new Vector3(door.x, door.y, 0f));
+            if (!GridSquareAvailable(door))
+                canAdd = false;
         }
 
         foreach (Vector3 spot in buildingOccupies)
         {
-            if (!IsWalkable((int)spot.x, (int)spot.y))
-            {
+            if(!GridSquareAvailable(new Vector2(spot.x, spot.y)))
                 canAdd = false;
-                break;
-            }
-
-            if (IsDoor((int)spot.x, (int)spot.y))
-            {
-                canAdd = false;
-                break;
-            }
-
-            if (!IsOnTheMap(new Vector2(spot.x, spot.y)))
-            {
-                canAdd = false;
-                break;
-            }
         }
 
+        return canAdd;
+    }
+
+    private bool  GridSquareAvailable(Vector2 spot)
+    {
+        bool canAdd = true;
+        if (!IsWalkable((int)spot.x, (int)spot.y))
+        {
+            canAdd = false;
+        }
+
+        if (IsDoor((int)spot.x, (int)spot.y))
+        {
+            canAdd = false;
+        }
+
+        if (!IsOnTheMap(new Vector2(spot.x, spot.y)))
+        {
+            canAdd = false;
+        }
         return canAdd;
     }
 

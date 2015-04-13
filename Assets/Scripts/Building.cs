@@ -6,6 +6,7 @@ using UnityEngine;
 
 internal enum BuildingUse
 {
+    Uknown,
     Farm,
     Incubator,
     TownHall,
@@ -18,7 +19,7 @@ internal class Building
     internal float Rotation { get; set; }
     internal List<Vector2> DoorGridLocations { get; set; }
     internal List<Vector2> BuildingGridLocations { get; set; }
-    public Building(string buildingName, Vector2 location, float rotation)
+    internal Building(string buildingName, Vector2 location, float rotation)
     {
         DoorGridLocations = new List<Vector2>();
         BuildingGridLocations = new List<Vector2>();

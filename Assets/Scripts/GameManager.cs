@@ -33,4 +33,9 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+    internal void DoMarker(Vector2 position)
+    {
+        Instantiate(Marker, new Vector3(position.x, position.y - 2, 0f), Quaternion.identity);
+    }
 }
