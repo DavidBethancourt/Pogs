@@ -29,8 +29,9 @@ public class SelectBuildings : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && _draggingBuilding != null) // user is trying to plant the building
         {
-            if (GameManager.instance.BoardLogic.Positions.AddBuildingToBoard(_draggingBuilding))
+            if (GameManager.instance.Board.Positions.AddBuildingToBoard(_draggingBuilding))
             {
+                GameManager.instance.Board.TurnDraggingBuildingColor(Color.white, _draggingBuilding);
                 _draggingBuilding = null;// stop dragging the building around and leave it where it sits.
             }
         }
@@ -55,7 +56,7 @@ public class SelectBuildings : MonoBehaviour
             int Xclose = Convert.ToInt32(Math.Round(worldpoint.x, 0));
             int Yclose = Convert.ToInt32(Math.Round(worldpoint.y, 0));
             _draggingBuilding.transform.position = new Vector3(Xclose, Yclose, 0);
-            GameManager.instance.BoardLogic.Positions.TinterizeForLegalPlacement(_draggingBuilding);
+            GameManager.instance.Board.TinterizeForLegalPlacement(_draggingBuilding);
         }
 	}
 

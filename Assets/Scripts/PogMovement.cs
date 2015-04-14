@@ -29,7 +29,7 @@ public class PogMovement : MonoBehaviour {
             SimplePoint start = new SimplePoint(Convert.ToInt32(Math.Round(this.transform.position.x)), Convert.ToInt32(Math.Round(this.transform.position.y)));
             SimplePoint end = new SimplePoint(Convert.ToInt32(Math.Round(_turkeyLeg.transform.position.x)), Convert.ToInt32(Math.Round(_turkeyLeg.transform.position.y)));
             PathFinder finder = new PathFinder();
-            _path = finder.FindPath(start, end, GameManager.instance.BoardLogic.Positions.WalkableMap);
+            _path = finder.FindPath(start, end, GameManager.instance.Board.Positions.WalkableMap);
         }
 
         if (_path != null && _path.Count > 0)

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;				//Static instance of GameManager which allows it to be accessed by any other script.
-    public BoardManager BoardLogic;						//Store a reference to our BoardManager which will set up the level.
+    public BoardManager Board;						//Store a reference to our BoardManager which will set up the level.
     public GameObject Marker;
 
     //Awake is always called before any Start functions
@@ -20,13 +20,13 @@ public class GameManager : MonoBehaviour
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
 
-        BoardLogic = GetComponent<BoardManager>();
+        Board = GetComponent<BoardManager>();
         InitGame();
     }
 
     void InitGame()
     {
-        BoardLogic.SetupScene();
+        Board.SetupScene();
     }
 
     void Update()

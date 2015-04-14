@@ -4,26 +4,31 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-internal enum BuildingUse
+[Serializable]
+public enum BuildingUse
 {
-    Uknown,
+    Unknown,
     Farm,
     Incubator,
     TownHall,
     House
 }
-internal class Building
+
+[Serializable]
+public class Building
 {
-    internal BuildingUse BuildingType { get; set; }
-    internal Vector2 Location { get; set; }
-    internal float Rotation { get; set; }
-    internal List<Vector2> DoorGridLocations { get; set; }
-    internal List<Vector2> BuildingGridLocations { get; set; }
-    internal Building(string buildingName, Vector2 location, float rotation)
+    public BuildingUse BuildingType { get; set; }
+    public Vector2 Location { get; set; }
+    public float Rotation { get; set; }
+    public List<Vector2> DoorGridLocations { get; set; }
+    public List<Vector2> BuildingGridLocations { get; set; }
+
+    public Building() { }
+    public Building(string buildingName, Vector2 location, float rotation)
     {
         DoorGridLocations = new List<Vector2>();
         BuildingGridLocations = new List<Vector2>();
-        string shortBuildingName = buildingName.Remove(buildingName.Length - 7);
+        string shortBuildingName = buildingName.Remove(buildingName.Length - 7); // gets the "(Clone)" off the back
         try
         {
             BuildingType = (BuildingUse)Enum.Parse(typeof(BuildingUse), shortBuildingName);
