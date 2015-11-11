@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -124,15 +122,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298922351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a910beca482a14cb0eaeb6b02bfa7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f097dd84fffa87499d9643aec92e841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   columns: 100
   rows: 100
-  Dirt: {fileID: 148476, guid: 355092f99aaa45e449ca26a9684ac837, type: 2}
-  Tree: {fileID: 178574, guid: 333079e51f4494f4c94358c0ce278904, type: 2}
-  Rock: {fileID: 153874, guid: 21739bebee0f04d42aa84db2e3295b53, type: 2}
-  Grass: {fileID: 147534, guid: ada43c79861a1e84ea359b2dc80f6a5f, type: 2}
+  Dirt: {fileID: 148476, guid: ab6683dee83941742a99dc6b2a860fe6, type: 2}
+  Tree: {fileID: 178574, guid: ba0f72fc7c0fdae409dd20142c4018d8, type: 2}
+  Rock: {fileID: 153874, guid: 0255052b2992f514ab805c3a4a0ac22d, type: 2}
+  Grass: {fileID: 147534, guid: dc7e109136973a24b94675bfa4dd5cce, type: 2}
 --- !u!114 &1298922354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,11 +139,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298922351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7a299149c1dbb54a95156784f103769, type: 3}
+  m_Script: {fileID: 11500000, guid: 83a90a99d23db114b94d1714879f7596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoardLogic: {fileID: 0}
-  Marker: {fileID: 119198, guid: 96447b93e85251240a666c857e1e864d, type: 2}
+  Board: {fileID: 0}
+  Marker: {fileID: 0}
 --- !u!1 &1406723212
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,13 +168,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1406723212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c407d276fa6d0174ea11f7c270e9eb49, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eb6a3fa915a4d34589957dc8dc2b45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pog: {fileID: 108792, guid: 39e5dbea057f4b64b92358f15204f5d8, type: 2}
-  Tree: {fileID: 178574, guid: 333079e51f4494f4c94358c0ce278904, type: 2}
-  Rock: {fileID: 153874, guid: 21739bebee0f04d42aa84db2e3295b53, type: 2}
-  Grass: {fileID: 147534, guid: ada43c79861a1e84ea359b2dc80f6a5f, type: 2}
+  Pog: {fileID: 108792, guid: 05b01a2df2cfe1f41b448b8cbfa701ed, type: 2}
+  Tree: {fileID: 178574, guid: ba0f72fc7c0fdae409dd20142c4018d8, type: 2}
+  Rock: {fileID: 153874, guid: 0255052b2992f514ab805c3a4a0ac22d, type: 2}
+  Grass: {fileID: 147534, guid: dc7e109136973a24b94675bfa4dd5cce, type: 2}
 --- !u!4 &1406723214
 Transform:
   m_ObjectHideFlags: 0
@@ -229,7 +227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -357172689
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e1b27fe47b3f9b48a871092aa9b0281, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0a1ddf261370fb4194c430d7e50c3e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1660854763
 Transform:
@@ -267,18 +265,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1732637247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd1b52945b4e93b40acabf3ac32e510f, type: 3}
+  m_Script: {fileID: 11500000, guid: 51449acc723fddf4a845bf74c4c58a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Farm: {fileID: 104322, guid: b6e3b35b537f3a145b02706422abc1c9, type: 2}
-  Incubator: {fileID: 176092, guid: 387b21edd583f4449b4697c9728ca72e, type: 2}
-  House: {fileID: 105244, guid: 83537a8bf858193418c9a0285d4e9894, type: 2}
-  TownHall: {fileID: 152658, guid: f0165fc4d50564a429cd96c93d63cc5f, type: 2}
-  FarmMenuTexture: {fileID: 2800000, guid: 7fe4c092e38559f42952dd691e0bc426, type: 3}
-  IncubatorMenuTexture: {fileID: 2800000, guid: 0377ff5dd15e3a445aa4789dc22c8193,
+  Farm: {fileID: 104322, guid: 3b7312b1676ce324c9e3c77ffec1e14a, type: 2}
+  Incubator: {fileID: 176092, guid: 507ad8cf56a2a8e49a02f341bf017a44, type: 2}
+  House: {fileID: 105244, guid: c0494811bbddf35499eac34de08e2318, type: 2}
+  TownHall: {fileID: 141194, guid: 7562338568c165b4d94f746f4ed9dfb1, type: 2}
+  FarmMenuTexture: {fileID: 2800000, guid: ec358d7161df5714498643ed2b6e19a0, type: 3}
+  IncubatorMenuTexture: {fileID: 2800000, guid: 600c2bfb1674df947af00c28f01b6844,
     type: 3}
-  HouseMenuTexture: {fileID: 2800000, guid: d78e6368cb5e4de4f92026247b14378e, type: 3}
-  TownHallMenuTexture: {fileID: 2800000, guid: a00e4da53285bbc488801feced0fbf0f, type: 3}
+  HouseMenuTexture: {fileID: 2800000, guid: 1ef581495bcafe14ba17b42660b5e078, type: 3}
+  TownHallMenuTexture: {fileID: 2800000, guid: 6eb557b8755b2974aa0c1e0c94954f01, type: 3}
 --- !u!4 &1732637249
 Transform:
   m_ObjectHideFlags: 0
@@ -315,7 +313,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2053979161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a565fc5c5e6b8246bfada6ac1db6b5a, type: 3}
+  m_Script: {fileID: 11500000, guid: fe997e0366a4a7549a9ab8976088db0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CameraDistance: 10
@@ -381,7 +379,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .632352948, g: .56597513, b: .423118532, a: .0196078438}
+  m_BackGroundColor: {r: .632352948, g: .56597513, b: .423118532, a: .527999997}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -400,10 +398,12 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &2061036307
 Transform:
   m_ObjectHideFlags: 0
