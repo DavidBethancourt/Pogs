@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pogs.CSharp", "Pogs.CSharp.csproj", "{75521EEC-830A-5B7D-7FF1-58AD3500D477}"
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pogs", "Pogs.csproj", "{BF401A87-D40A-D18A-4C96-24F4D74335A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{75521EEC-830A-5B7D-7FF1-58AD3500D477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75521EEC-830A-5B7D-7FF1-58AD3500D477}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75521EEC-830A-5B7D-7FF1-58AD3500D477}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75521EEC-830A-5B7D-7FF1-58AD3500D477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF401A87-D40A-D18A-4C96-24F4D74335A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF401A87-D40A-D18A-4C96-24F4D74335A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF401A87-D40A-D18A-4C96-24F4D74335A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF401A87-D40A-D18A-4C96-24F4D74335A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
